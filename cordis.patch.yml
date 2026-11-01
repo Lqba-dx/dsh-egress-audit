@@ -1,0 +1,3 @@
+- insert:
+    - id: egress-audit
+      name: 'dsh-egress-audit'

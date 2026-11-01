@@ -1,0 +1,52 @@
+{
+  "name": "dsh-egress-audit",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Read-only panel showing the network destinations the Harness host process sends data to, with trust tiers, explainable suspicion marks and blocked calls.",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "security",
+    "privacy",
+    "audit",
+    "network",
+    "egress"
+  ],
+  "license": "MIT",
+  "author": "Lqba-dx",
+  "homepage": "https://github.com/Lqba-dx/dsh-egress-audit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lqba-dx/dsh-egress-audit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lqba-dx/dsh-egress-audit/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "manifestVersion": 1
+  }
+}
