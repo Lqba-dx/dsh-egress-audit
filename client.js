@@ -50,7 +50,7 @@ window.__ModuleLoader__.load({
 
     // One shared column template per table keeps every row aligned no matter how
     // long a host name or a package list is.
-    const DEST_COLS = 'minmax(0, 1.7fr) 88px 72px 38px minmax(0, 1.3fr) 62px'
+    const DEST_COLS = 'minmax(0, 1.7fr) 84px 76px 56px minmax(0, 1.3fr) 62px'
     const EVENT_COLS = '62px minmax(0, 1.1fr) minmax(0, 1.9fr) 62px 58px'
 
     function readHidden() {
@@ -112,7 +112,8 @@ window.__ModuleLoader__.load({
         display: 'grid',
         gridTemplateColumns: columns,
         alignItems: 'start',
-        gap: '8px',
+        columnGap: '16px',
+        rowGap: '6px',
         padding: '7px 10px',
         borderBottom: `1px solid ${C.border}`,
         fontSize: '12px',
@@ -259,7 +260,7 @@ window.__ModuleLoader__.load({
             h('div', { key: 'a', style: cell() }, '目的地'),
             h('div', { key: 'b', style: cell() }, '分级'),
             h('div', { key: 'c', style: cell() }, '内容'),
-            h('div', { key: 'd', style: cell({ textAlign: 'right' }) }, '次数'),
+            h('div', { key: 'd', style: cell({ textAlign: 'center' }) }, '次数'),
             h('div', { key: 'e', style: cell() }, '发起插件'),
             h('div', { key: 'f', style: cell({ textAlign: 'right' }) }, '操作'),
           ]),
@@ -277,7 +278,7 @@ window.__ModuleLoader__.load({
                 ]),
                 h('div', { key: 't', style: cell({ paddingTop: '1px' }) }, h(Tag, { text: tier.label, color: tier.color })),
                 h('div', { key: 'c', style: cell({ color: item.data === '对话内容' ? C.warn : C.dim, paddingTop: '1px', wordBreak: 'break-all' }) }, item.data),
-                h('div', { key: 'n', style: cell({ textAlign: 'right', color: C.dim, paddingTop: '1px' }) }, String(item.count)),
+                h('div', { key: 'n', style: cell({ textAlign: 'center', color: C.dim, paddingTop: '1px', fontVariantNumeric: 'tabular-nums' }) }, String(item.count)),
                 h('div', { key: 'p', style: cell({ color: C.dim, fontSize: '11px', paddingTop: '1px', wordBreak: 'break-all' }) },
                   item.plugins.join(', ') || '无法确定'),
                 h('div', { key: 'x', style: cell({ textAlign: 'right', paddingTop: '1px' }) },
